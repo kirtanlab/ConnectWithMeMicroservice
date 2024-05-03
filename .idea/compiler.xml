@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Auth_DataAccess" />
+        <module name="Auth_Domain_Core" />
+        <module name="Auth_Application_Service" />
+        <module name="Auth_Container" />
+        <module name="Auth_Application" />
+        <module name="Auth_Messaging" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Auth_Application" options="-parameters" />
+      <module name="Auth_Application_Service" options="-parameters" />
+      <module name="Auth_Container" options="-parameters" />
+      <module name="Auth_DataAccess" options="-parameters" />
+      <module name="Auth_Domain" options="" />
+      <module name="Auth_Domain_Core" options="-parameters" />
+      <module name="Auth_Messaging" options="-parameters" />
+    </option>
+  </component>
+</project>

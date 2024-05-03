@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/AuthService/Auth_Application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AuthService/Auth_Container/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Domain_Core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AuthService/Auth_Domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AuthService/Auth_Domain/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AuthService/Auth_Messaging/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AuthService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AuthService/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
