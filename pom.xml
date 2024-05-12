@@ -14,7 +14,7 @@
     <groupId>com.ConnectWithMe</groupId>
     <artifactId>RootDirectory</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+
 
     <modules>
         <module>AuthService</module>

@@ -5,55 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e329f494-d2cd-4920-85fd-bccf739a05e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Application/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Application/src/main/java/com/ConnectWithMe/Controllers/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Container/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Container/src/main/java/com/ConnectWithMe/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Container/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/AuthJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/CityJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/CollegeInfoJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/CountryJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/SkillJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/StateJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/adapter/RepositoriesImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/AddressEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/CityEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/CollegesInfoEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/CountryEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/EducationEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/LinkNamesEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/OTPEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/ProjectSkillsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/SkillsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/StateEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/TokenEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/UserLinksEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/UserProjectsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/UserSkillsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/UsersEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/mapper/UserAccessDataMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/createCity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/createCollegeInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/createCountry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/createSkill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/createState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/createUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/createUserResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/input/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/output/Repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Domain_Core/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Messaging/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Messaging/src/main/java/com/ConnectWithMe/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/EducationJpaRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Container/src/main/java/com/ConnectWithMe/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Container/src/main/java/com/ConnectWithMe/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/adapter/RepositoriesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/adapter/RepositoriesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/EducationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/EducationEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/createUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/createUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,13 +21,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -90,6 +50,7 @@
     "Maven.AuthService [clean].executor": "Run",
     "Maven.MicroservicesService [clean].executor": "Run",
     "Maven.RootDirectory [clean].executor": "Run",
+    "Maven.RootDirectory [compile].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -111,6 +72,7 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean" />
+      <command value="mvn compile" />
     </option>
   </component>
   <component name="SharedIndexes">

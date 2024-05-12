@@ -25,8 +25,8 @@ public class EducationEntity {
     @JoinColumn(name = "userID" , referencedColumnName = "id")
     private UsersEntity user;
 
-    private Date StartDate;
-    private Date EndDate;
+    private String StartDate;
+    private String EndDate;
     private String Degreetitlee;
     private String DegreeName;
 }

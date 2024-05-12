@@ -49,6 +49,9 @@ public class UserService {
     public createUserResponse RegisterUser(createUser createuser){
         System.out.println("createuser"+createuser.getEmail());
         Integer userID = userrepo.saveUser(createuser);
+        if(userID == null){
+            return new createUserResponse(null,"Email already exists");
+        }
         return new createUserResponse(userID,"done");
     }
 }

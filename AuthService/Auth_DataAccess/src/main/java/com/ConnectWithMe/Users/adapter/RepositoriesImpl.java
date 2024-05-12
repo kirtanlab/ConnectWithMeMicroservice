@@ -8,6 +8,7 @@ import com.ConnectWithMe.Users.mapper.UserAccessDataMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.Optional;
 
 import static com.ConnectWithMe.Users.mapper.UserAccessDataMapper.convertToCountryEntity;
 
@@ -22,13 +23,16 @@ public class RepositoriesImpl implements UserRepository {
     private final SkillJpaRepository skilljparepo;
     private final AuthJpaRepository authjparepo;
 
+    private final EducationJpaRepository educationjparepo;
+
     public RepositoriesImpl(CountryJpaRepository countryjparepo ,
                             StateJpaRepository statejparepo ,
                             UserAccessDataMapper usermapper,
                             CityJpaRepository cityjparepo,
                             CollegeInfoJpaRepository collegeinfojparepo,
                             SkillJpaRepository skilljparepo,
-                            AuthJpaRepository authjparepo){
+                            AuthJpaRepository authjparepo,
+                            EducationJpaRepository educationjparepo){
         this.countryjparepo = countryjparepo;
         this.statejparepo = statejparepo;
         this.usermapper = usermapper;
@@ -36,6 +40,7 @@ public class RepositoriesImpl implements UserRepository {
         this.collegeinfojparepo = collegeinfojparepo;
         this.skilljparepo = skilljparepo;
         this.authjparepo = authjparepo;
+        this.educationjparepo = educationjparepo;
     }
 
     public void saveCountry(createCountry country){
@@ -76,6 +81,10 @@ public class RepositoriesImpl implements UserRepository {
     }
 
     public Integer saveUser(createUser createuser){
+        if (authjparepo.existsByEmail(createuser.getEmail())) {
+            // User with the same email already exists
+            return null;
+        }
         System.out.println("createuser "+createuser.getHeadline());
         UsersEntity userEntity = UsersEntity.builder()
                 .ProfilePicture(createuser.getProfilePicture())
@@ -85,9 +94,25 @@ public class RepositoriesImpl implements UserRepository {
                 .headline(createuser.getHeadline())
                 .createdAt(new Date())
                 .updatedAt(new Date())
+                .status(true)
                 .build();
         authjparepo.save(userEntity);
         System.out.println("id "+userEntity.getId());
+        Optional<UsersEntity> userOptional = authjparepo.findById(userEntity.getId());
+        UsersEntity user = userOptional.orElse(null);
+
+        Optional<CollegesInfoEntity> collegesInfoOptional = collegeinfojparepo.findById(createuser.getCollegesInfo());
+        CollegesInfoEntity collegesInfo = collegesInfoOptional.orElse(null);
+        EducationEntity education = EducationEntity.builder()
+                .collegesInfo(collegesInfo)
+                .user(user)
+                .Degreetitlee(createuser.getDegreetitlee())
+                .StartDate(createuser.getStartDate())
+                .EndDate(createuser.getEndDate())
+                .DegreeName(createuser.getDegreeName())
+                .build();
+        educationjparepo.save(education);
+
         return userEntity.getId();
     }
 }
