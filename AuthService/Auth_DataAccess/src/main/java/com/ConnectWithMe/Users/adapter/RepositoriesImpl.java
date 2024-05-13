@@ -8,7 +8,9 @@ import com.ConnectWithMe.Users.mapper.UserAccessDataMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static com.ConnectWithMe.Users.mapper.UserAccessDataMapper.convertToCountryEntity;
 
@@ -24,7 +26,7 @@ public class RepositoriesImpl implements UserRepository {
     private final AuthJpaRepository authjparepo;
 
     private final EducationJpaRepository educationjparepo;
-
+    private final UserSkillJpaRepository userskilljparepo;
     public RepositoriesImpl(CountryJpaRepository countryjparepo ,
                             StateJpaRepository statejparepo ,
                             UserAccessDataMapper usermapper,
@@ -32,7 +34,8 @@ public class RepositoriesImpl implements UserRepository {
                             CollegeInfoJpaRepository collegeinfojparepo,
                             SkillJpaRepository skilljparepo,
                             AuthJpaRepository authjparepo,
-                            EducationJpaRepository educationjparepo){
+                            EducationJpaRepository educationjparepo,
+                            UserSkillJpaRepository userskilljparepo){
         this.countryjparepo = countryjparepo;
         this.statejparepo = statejparepo;
         this.usermapper = usermapper;
@@ -41,6 +44,7 @@ public class RepositoriesImpl implements UserRepository {
         this.skilljparepo = skilljparepo;
         this.authjparepo = authjparepo;
         this.educationjparepo = educationjparepo;
+        this.userskilljparepo  = userskilljparepo;
     }
 
     public void saveCountry(createCountry country){
@@ -112,6 +116,23 @@ public class RepositoriesImpl implements UserRepository {
                 .DegreeName(createuser.getDegreeName())
                 .build();
         educationjparepo.save(education);
+
+        List<UserSkillsEntity> userSkillsEntities = createuser.getSkills().stream()
+                .map(skillId -> {
+                    // Fetch or create SkillsEntity for the given skillId
+                    SkillsEntity skillEntity = skilljparepo.findById(skillId)
+                            .orElse(SkillsEntity.builder().skillName("New Skill").build());
+
+                    // Create UserSkillsEntity to associate user with skill
+                    return UserSkillsEntity.builder()
+                            .userId(user)
+                            .skillId(skillEntity)
+                            .build();
+                })
+                .collect(Collectors.toList());
+
+        // Save all user skill associations
+        userskilljparepo.saveAll(userSkillsEntities);
 
         return userEntity.getId();
     }

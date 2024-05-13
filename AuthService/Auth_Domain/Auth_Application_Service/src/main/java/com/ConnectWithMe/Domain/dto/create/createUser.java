@@ -4,6 +4,7 @@ import lombok.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Builder
@@ -50,6 +51,6 @@ public class createUser {
     @JsonProperty("DegreeName")
     private String DegreeName;
 
-//    @JsonProperty("Skills")
-//    private List<Integer> Skills;
+    @JsonProperty("Skills")
+    private List<Integer> Skills;
 }

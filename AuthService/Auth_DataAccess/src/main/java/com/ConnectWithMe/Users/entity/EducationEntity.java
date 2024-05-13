@@ -17,7 +17,7 @@ public class EducationEntity {
     @GeneratedValue
     private Integer id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "CollegeInfoID" , referencedColumnName = "id")
     private CollegesInfoEntity collegesInfo;
 
