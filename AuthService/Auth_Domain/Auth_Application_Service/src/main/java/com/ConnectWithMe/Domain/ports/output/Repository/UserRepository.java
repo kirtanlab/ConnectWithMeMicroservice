@@ -2,6 +2,9 @@ package com.ConnectWithMe.Domain.ports.output.Repository;
 
 import com.ConnectWithMe.Domain.dto.create.*;
 
+import java.security.Principal;
+import java.util.Map;
+
 public interface UserRepository {
 
     void saveCountry(createCountry country);
@@ -9,6 +12,7 @@ public interface UserRepository {
     void saveCity(createCity createcity);
     void saveCollegeInfo(createCollegeInfo createcollegeinfo);
     void saveSkill(createSkill createskill);
-    Integer saveUser(createUser createuser);
-    Integer loginUser(checkUser checkuser);
+    Map<String, Object> saveUser(createUser createuser);
+    Map<String, Object> loginUser(checkUser checkuser);
+    Integer saveProject(createProject createproject, Principal principal);
 }

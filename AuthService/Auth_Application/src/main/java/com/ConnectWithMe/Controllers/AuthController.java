@@ -1,18 +1,29 @@
 package com.ConnectWithMe.Controllers;
 
 import com.ConnectWithMe.Domain.dto.create.*;
+import com.ConnectWithMe.Domain.ports.input.service.AuthenticationService;
 import com.ConnectWithMe.Domain.ports.input.service.UserService;
+import com.ConnectWithMe.Domain.ports.input.service.jwtService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
+
+import java.security.Principal;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "Auth/v1/api/")
 public class AuthController {
 
     private final UserService userservice;
+    private final jwtService jwtservice;
+    private final AuthenticationService authservice;
 
-    public AuthController(UserService userservice){
+    public AuthController(UserService userservice , AuthenticationService authservice , jwtService jwtservice){
         this.userservice = userservice;
+        this.authservice = authservice;
+        this.jwtservice = jwtservice;
     }
 
     @PostMapping("Country/")
@@ -57,13 +68,26 @@ public class AuthController {
     public ResponseEntity<?> RegisterUser(@RequestBody createUser createuser){
         System.out.println("createUser "+createuser.getName());
         createUserResponse createUserResponse = userservice.RegisterUser(createuser);
+//        String acessstoken = jwtservice.generateAccessToken((String) user.get("userName"), (String) user.get("userID"));
         return  ResponseEntity.ok(createUserResponse);
     }
     @PostMapping("Login/")
     public ResponseEntity<?> LoginUser(@RequestBody checkUser checkuser){
         System.out.println("checkuser "+checkuser.getEmail());
-        createUserResponse createUserResponse = userservice.LoginUser(checkuser);
-        return  ResponseEntity.ok(createUserResponse);
+        LoginUserResponse loginUserResponse = authservice.authenticate(checkuser);
+        return  ResponseEntity.ok(loginUserResponse);
     }
 
+    @PostMapping("UserProject/")
+//    if exists project
+    public ResponseEntity<?> createProject(@RequestBody createProject createproject , Principal principal){
+        System.out.println("controller "+principal.getName());
+        Integer projectID = userservice.createProject(createproject,principal);
+        Map<String, Integer> projectMap = new HashMap<>();
+        projectMap.put("ProjectID ", projectID);
+        if (projectID == null){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Project with this title is already there");
+        }
+        return ResponseEntity.ok(projectMap);
+    }
 }

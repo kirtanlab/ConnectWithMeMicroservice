@@ -26,5 +26,5 @@ spring:
       hbm2ddl:
         auto: update
 
-#jwt:
-#  secretKey : afafasfafafasfasfasfafacasdasfasxASFACASDFACASDFASFASFDAFASFASDAADSCSDFADCVSGCFVADXCcadwavfsfarvf
+jwt:
+  secretKey : afafasfafafasfasfasfafacasdasfasxASFACASDFACASDFASFASFDAFASFASDAADSCSDFADCVSGCFVADXCcadwavfsfarvf

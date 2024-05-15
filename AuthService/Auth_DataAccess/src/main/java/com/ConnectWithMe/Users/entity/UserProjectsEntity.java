@@ -21,7 +21,8 @@ public class UserProjectsEntity {
     @JoinColumn(name = "UserId" , referencedColumnName = "id")
     private UsersEntity user;
 
-    private String ProjectTitle;
+    private String ProjectLink;
+    private String projectTitle;
     private String ProjectDescription;
     private Integer Stars;
     private Integer visits;

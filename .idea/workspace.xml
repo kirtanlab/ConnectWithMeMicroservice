@@ -5,12 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e329f494-d2cd-4920-85fd-bccf739a05e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/UserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Domain_Core/src/main/java/com/ConnectWithMe/Domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Container/src/main/java/com/ConnectWithMe/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Container/src/main/java/com/ConnectWithMe/config/SecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/ProjectSkillsJpaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/UserProjectsJpaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/LoginUserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/createProject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/input/service/AuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/input/service/jwtService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Application/src/main/java/com/ConnectWithMe/Controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Application/src/main/java/com/ConnectWithMe/Controllers/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AuthService/Auth_Container/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Container/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/createUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/createUserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/adapter/RepositoriesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/adapter/RepositoriesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/UserProjectsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/UserProjectsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/UserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/UserDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/input/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/input/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/output/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/output/Repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AuthService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -57,10 +67,11 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/WebDevelopment/Backend/Authentication/JwtAuthenticationWithSpringboot",
+    "last_opened_file_path": "C:/WebDevelopment/Backend/Authentication/Asset_Management",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>

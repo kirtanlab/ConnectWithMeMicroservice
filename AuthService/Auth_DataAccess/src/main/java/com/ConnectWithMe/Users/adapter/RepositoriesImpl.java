@@ -7,9 +7,8 @@ import com.ConnectWithMe.Users.entity.*;
 import com.ConnectWithMe.Users.mapper.UserAccessDataMapper;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.security.Principal;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static com.ConnectWithMe.Users.mapper.UserAccessDataMapper.convertToCountryEntity;
@@ -27,6 +26,8 @@ public class RepositoriesImpl implements UserRepository {
 
     private final EducationJpaRepository educationjparepo;
     private final UserSkillJpaRepository userskilljparepo;
+    private final UserProjectsJpaRepository userprojectjparepo;
+    private final ProjectSkillsJpaRepository projectskilljparepo;
     public RepositoriesImpl(CountryJpaRepository countryjparepo ,
                             StateJpaRepository statejparepo ,
                             UserAccessDataMapper usermapper,
@@ -35,7 +36,9 @@ public class RepositoriesImpl implements UserRepository {
                             SkillJpaRepository skilljparepo,
                             AuthJpaRepository authjparepo,
                             EducationJpaRepository educationjparepo,
-                            UserSkillJpaRepository userskilljparepo){
+                            UserSkillJpaRepository userskilljparepo,
+                            UserProjectsJpaRepository userprojectjparepo,
+                            ProjectSkillsJpaRepository projectskilljparepo){
         this.countryjparepo = countryjparepo;
         this.statejparepo = statejparepo;
         this.usermapper = usermapper;
@@ -45,6 +48,8 @@ public class RepositoriesImpl implements UserRepository {
         this.authjparepo = authjparepo;
         this.educationjparepo = educationjparepo;
         this.userskilljparepo  = userskilljparepo;
+        this.userprojectjparepo = userprojectjparepo;
+        this.projectskilljparepo = projectskilljparepo;
     }
 
     public void saveCountry(createCountry country){
@@ -84,7 +89,8 @@ public class RepositoriesImpl implements UserRepository {
         skilljparepo.save(skillEntity);
     }
 
-    public Integer saveUser(createUser createuser){
+    public Map<String, Object> saveUser(createUser createuser){
+        Map<String, Object> userobj = new HashMap<>();
         if (authjparepo.existsByEmail(createuser.getEmail())) {
             // User with the same email already exists
             return null;
@@ -136,11 +142,49 @@ public class RepositoriesImpl implements UserRepository {
         // Save all user skill associations
         userskilljparepo.saveAll(userSkillsEntities);
 
-        return userEntity.getId();
+        userobj.put("userID", String.valueOf(userEntity.getId()));
+        userobj.put("userName", userEntity.getName());
+        return userobj;
     }
 
-    public Integer loginUser(checkUser checkuser){
+    public Map<String, Object> loginUser(checkUser checkuser){
+        Map<String, Object> userobj = new HashMap<>(); // Instantiate a HashMap
         UsersEntity user = authjparepo.findByEmail(checkuser.getEmail());
-        return   user.getId();
+        userobj.put("userID", String.valueOf(user.getId()));
+        userobj.put("userName", user.getName());
+        return userobj;
+    }
+
+    public Integer saveProject(createProject createproject, Principal principal){
+        if (userprojectjparepo.existsByProjectTitle(createproject.getProjectTitle())) {
+            // User with the same email already exists
+            return null;
+        }
+        UsersEntity user = authjparepo.findById(Integer.valueOf(principal.getName()))
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        UserProjectsEntity userProjects = UserProjectsEntity.builder()
+                .projectTitle(createproject.getProjectTitle())
+                .user(user)
+                .ProjectLink(createproject.getProjectLink())
+                .ProjectDescription(createproject.getProjectDescription())
+                .createdAt(new Date())
+                .UpdatedAt(new Date())
+                .build();
+        userprojectjparepo.save(userProjects);
+
+        List<Integer> projectSkills = createproject.getProjectSkills();
+
+        // Save project skills
+        for (Integer skillId : projectSkills) {
+            // Create a new ProjectSkillsEntity for each skill and associate it with the project
+            ProjectSkillsEntity projectSkill = ProjectSkillsEntity.builder()
+                    .project(userProjects)
+                    .skills(skilljparepo.findById(skillId).orElseThrow(() -> new RuntimeException("Skill not found")))
+                    .build();
+            projectskilljparepo.save(projectSkill);
+        }
+
+        return userProjects.getId();
     }
 }

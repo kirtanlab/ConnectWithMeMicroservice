@@ -5,13 +5,19 @@ import com.ConnectWithMe.Domain.dto.create.*;
 import com.ConnectWithMe.Domain.ports.output.Repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
+import java.util.Map;
+
 @Service
 public class UserService {
 
     private final UserRepository userrepo;
+    private final jwtService jwtservice;
 
-    public UserService (UserRepository userrepo){
+
+    public UserService (UserRepository userrepo , jwtService jwtservice){
         this.userrepo = userrepo;
+        this.jwtservice = jwtservice;
     }
 
     public String RegisterCountry(createCountry countryName) {
@@ -49,21 +55,17 @@ public class UserService {
 
     public createUserResponse RegisterUser(createUser createuser){
         System.out.println("createuser"+createuser.getEmail());
-        Integer user = userrepo.saveUser(createuser);
+        Map<String, Object> user  = userrepo.saveUser(createuser);
         if(user == null){
             return new createUserResponse(null , null,"Email already exists");
         }
-        UserDetails userResponse = new UserDetails(user, createuser.getName());
-        return new createUserResponse(userResponse, "hhdgtrsrwaewarwshtfjhbjcgfs","done");
+        String acessstoken = jwtservice.generateAccessToken((String) user.get("userName"), (String) user.get("userID"));
+        UserDetails userResponse = new UserDetails((String) user.get("userName"));
+        return new createUserResponse(userResponse,acessstoken , "Successfully Registered");
     }
 
-    public createUserResponse LoginUser(checkUser checkuser){
-        System.out.println("checkuser "+checkuser.getEmail());
-        Integer user = userrepo.loginUser(checkuser);
-        if(user == null){
-            return new createUserResponse(null,null,"Email doesn't exists");
-        }
-        UserDetails userResponse = new UserDetails(user, checkuser.getEmail());
-        return new createUserResponse(userResponse,"cggdgdgdhhfjvncdzfawjiiuf","Successfully loged in");
+    public Integer createProject(createProject createproject, Principal principal){
+        System.out.println("createproject "+createproject.getProjectTitle() + " user code "+principal.getName());
+        return userrepo.saveProject(createproject,principal);
     }
 }
