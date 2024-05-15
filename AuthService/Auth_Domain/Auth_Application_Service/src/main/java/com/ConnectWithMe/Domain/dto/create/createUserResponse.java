@@ -8,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 public class createUserResponse {
 
-    private Integer id;
+    UserDetails user;
+    private String token;
     private String message;
 }

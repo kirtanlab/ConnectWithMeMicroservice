@@ -1,5 +1,6 @@
 package com.ConnectWithMe.Domain.ports.input.service;
 
+import com.ConnectWithMe.Domain.User;
 import com.ConnectWithMe.Domain.dto.create.*;
 import com.ConnectWithMe.Domain.ports.output.Repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -48,19 +49,21 @@ public class UserService {
 
     public createUserResponse RegisterUser(createUser createuser){
         System.out.println("createuser"+createuser.getEmail());
-        Integer userID = userrepo.saveUser(createuser);
-        if(userID == null){
-            return new createUserResponse(null,"Email already exists");
+        Integer user = userrepo.saveUser(createuser);
+        if(user == null){
+            return new createUserResponse(null , null,"Email already exists");
         }
-        return new createUserResponse(userID,"done");
+        UserDetails userResponse = new UserDetails(user, createuser.getName());
+        return new createUserResponse(userResponse, "hhdgtrsrwaewarwshtfjhbjcgfs","done");
     }
 
     public createUserResponse LoginUser(checkUser checkuser){
         System.out.println("checkuser "+checkuser.getEmail());
-        Integer userID = userrepo.loginUser(checkuser);
-        if(userID == null){
-            return new createUserResponse(null,"Email doesn't exists");
+        Integer user = userrepo.loginUser(checkuser);
+        if(user == null){
+            return new createUserResponse(null,null,"Email doesn't exists");
         }
-        return new createUserResponse(userID,"Successfully loged in");
+        UserDetails userResponse = new UserDetails(user, checkuser.getEmail());
+        return new createUserResponse(userResponse,"cggdgdgdhhfjvncdzfawjiiuf","Successfully loged in");
     }
 }

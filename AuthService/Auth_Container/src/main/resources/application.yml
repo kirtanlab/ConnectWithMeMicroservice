@@ -25,3 +25,6 @@ spring:
       database-platform: org.hibernate.dialect.PostgreSQLDialect
       hbm2ddl:
         auto: update
+
+#jwt:
+#  secretKey : afafasfafafasfasfasfafacasdasfasxASFACASDFACASDFASFASFDAFASFASDAADSCSDFADCVSGCFVADXCcadwavfsfarvf
