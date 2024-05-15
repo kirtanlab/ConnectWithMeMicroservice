@@ -17,11 +17,11 @@ public class EducationEntity {
     @GeneratedValue
     private Integer id;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "CollegeInfoID" , referencedColumnName = "id")
     private CollegesInfoEntity collegesInfo;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "userID" , referencedColumnName = "id")
     private UsersEntity user;
 

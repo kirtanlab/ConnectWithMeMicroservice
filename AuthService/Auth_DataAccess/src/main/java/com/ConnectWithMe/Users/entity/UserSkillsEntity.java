@@ -15,11 +15,11 @@ public class UserSkillsEntity {
     @GeneratedValue
     private Integer id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "userID" , referencedColumnName = "id")
     private UsersEntity userId;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "skillID" , referencedColumnName = "id")
     private SkillsEntity skillId;
 }

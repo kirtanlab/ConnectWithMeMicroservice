@@ -105,8 +105,10 @@ public class RepositoriesImpl implements UserRepository {
         Optional<UsersEntity> userOptional = authjparepo.findById(userEntity.getId());
         UsersEntity user = userOptional.orElse(null);
 
-        Optional<CollegesInfoEntity> collegesInfoOptional = collegeinfojparepo.findById(createuser.getCollegesInfo());
-        CollegesInfoEntity collegesInfo = collegesInfoOptional.orElse(null);
+        CollegesInfoEntity collegesInfo = collegeinfojparepo.findById(createuser.getCollegesInfo())
+                .orElseThrow(() -> new RuntimeException("College not found"));
+        System.out.println(collegesInfo.getCollegeName());
+
         EducationEntity education = EducationEntity.builder()
                 .collegesInfo(collegesInfo)
                 .user(user)

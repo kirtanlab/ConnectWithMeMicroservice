@@ -16,15 +16,15 @@ public class CollegesInfoEntity {
     private Integer id;
     private String CollegeName;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CountryID" , referencedColumnName = "id")
     private CountryEntity country;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "StateID" , referencedColumnName = "id")
     private StateEntity state;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CityID" , referencedColumnName = "id")
     private CityEntity city;
 }
