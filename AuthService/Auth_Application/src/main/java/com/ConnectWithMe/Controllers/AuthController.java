@@ -59,5 +59,11 @@ public class AuthController {
         createUserResponse createUserResponse = userservice.RegisterUser(createuser);
         return  ResponseEntity.ok(createUserResponse);
     }
+    @PostMapping("Login/")
+    public ResponseEntity<?> LoginUser(@RequestBody checkUser checkuser){
+        System.out.println("checkuser "+checkuser.getEmail());
+        createUserResponse createUserResponse = userservice.LoginUser(checkuser);
+        return  ResponseEntity.ok(createUserResponse);
+    }
 
 }

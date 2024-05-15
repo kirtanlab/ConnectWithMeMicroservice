@@ -10,4 +10,5 @@ public interface UserRepository {
     void saveCollegeInfo(createCollegeInfo createcollegeinfo);
     void saveSkill(createSkill createskill);
     Integer saveUser(createUser createuser);
+    Integer loginUser(checkUser checkuser);
 }

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e329f494-d2cd-4920-85fd-bccf739a05e8" name="Changes" comment="" />
+    <list default="true" id="e329f494-d2cd-4920-85fd-bccf739a05e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/dto/create/checkUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Application/src/main/java/com/ConnectWithMe/Controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Application/src/main/java/com/ConnectWithMe/Controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/AuthJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/AuthJpaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/adapter/RepositoriesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/adapter/RepositoriesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/input/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/input/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/output/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/output/Repository/UserRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -54,4 +54,13 @@ public class UserService {
         }
         return new createUserResponse(userID,"done");
     }
+
+    public createUserResponse LoginUser(checkUser checkuser){
+        System.out.println("checkuser "+checkuser.getEmail());
+        Integer userID = userrepo.loginUser(checkuser);
+        if(userID == null){
+            return new createUserResponse(null,"Email doesn't exists");
+        }
+        return new createUserResponse(userID,"Successfully loged in");
+    }
 }

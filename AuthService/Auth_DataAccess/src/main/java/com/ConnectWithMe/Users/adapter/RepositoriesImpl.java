@@ -138,4 +138,9 @@ public class RepositoriesImpl implements UserRepository {
 
         return userEntity.getId();
     }
+
+    public Integer loginUser(checkUser checkuser){
+        UsersEntity user = authjparepo.findByEmail(checkuser.getEmail());
+        return   user.getId();
+    }
 }
