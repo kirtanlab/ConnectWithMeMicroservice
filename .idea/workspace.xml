@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e329f494-d2cd-4920-85fd-bccf739a05e8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/adapter/RepositoriesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/adapter/RepositoriesImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/CollegesInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/CollegesInfoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/EducationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/EducationEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/UserSkillsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/entity/UserSkillsEntity.java" afterDir="false" />
-    </list>
+    <list default="true" id="e329f494-d2cd-4920-85fd-bccf739a05e8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
