@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.ConnectWithMe</groupId>
-        <artifactId>AuthService</artifactId>
+        <artifactId>RootDirectory</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Auth_Container</artifactId>
+    <artifactId>ServiceDiscovery</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -20,47 +20,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.ConnectWithMe</groupId>
-            <artifactId>Auth_Application</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ConnectWithMe</groupId>
-            <artifactId>Auth_DataAccess</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ConnectWithMe</groupId>
-            <artifactId>Auth_Messaging</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ConnectWithMe.Domain</groupId>
-            <artifactId>Auth_Domain_Core</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ConnectWithMe.Domain</groupId>
-            <artifactId>Auth_Application_Service</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

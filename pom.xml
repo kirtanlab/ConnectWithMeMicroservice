@@ -20,6 +20,8 @@
         <module>AuthService</module>
         <module>FeedService</module>
         <module>Infrastructure</module>
+        <module>ServiceDiscovery</module>
+        <module>APIGateway</module>
     </modules>
 
     <properties>
