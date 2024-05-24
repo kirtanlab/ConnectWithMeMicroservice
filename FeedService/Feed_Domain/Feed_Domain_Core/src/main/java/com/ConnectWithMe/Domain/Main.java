@@ -1,4 +1,4 @@
-package com.ConnectWithMe;
+package com.ConnectWithMe.Domain;
 
 public class Main {
     public static void main(String[] args) {

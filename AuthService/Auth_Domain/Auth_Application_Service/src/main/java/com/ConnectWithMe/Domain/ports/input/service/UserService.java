@@ -3,17 +3,23 @@ package com.ConnectWithMe.Domain.ports.input.service;
 import com.ConnectWithMe.Domain.User;
 import com.ConnectWithMe.Domain.dto.create.*;
 import com.ConnectWithMe.Domain.ports.output.Repository.UserRepository;
+import com.ConnectWithMe.Domain.ports.output.message.publisher.userSignUpRequestMessagePublisher;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.security.Principal;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
-
+import com.ConnectWithMe.Domain.outbox.model.*;
 @Service
 public class UserService {
 
     private final UserRepository userrepo;
     private final jwtService jwtservice;
 
+    @Autowired
+    private userSignUpRequestMessagePublisher usersignUpRequestMessagePublisher;
 
     public UserService (UserRepository userrepo , jwtService jwtservice){
         this.userrepo = userrepo;
@@ -54,14 +60,43 @@ public class UserService {
     }
 
     public createUserResponse RegisterUser(createUser createuser){
-        System.out.println("createuser"+createuser.getEmail());
-        Map<String, Object> user  = userrepo.saveUser(createuser);
-        if(user == null){
-            return new createUserResponse(null , null,"Email already exists");
+        try {
+            System.out.println("createuser"+createuser.getEmail());
+            Map<String, Object> user  = userrepo.saveUser(createuser);
+            if(user == null){
+                return new createUserResponse(null , null,"Email already exists");
+            }
+            System.out.println("userName class: " + user.get("userName").getClass().getName());
+            System.out.println("userID class: " + user.get("userID").getClass().getName());
+            String userIDStr = String.valueOf((Integer) user.get("userID"));
+
+            String acessstoken = jwtservice.generateAccessToken((String) user.get("userName"), userIDStr);
+            System.out.println("token");
+            UserDetails userResponse = new UserDetails("Nothing");
+            System.out.println("useresponse");
+
+            Integer userID = (Integer) user.get("userID");
+            List<Integer> skillIDs = createuser.getSkills();
+//        List<Integer> projectIDs = userrepo.ProjectIDsByUserID(userID);
+//        System.out.println(projectIDs);
+//        List<Integer> projectSkillIDs = Collections.emptyList();
+            Integer educationIDs = createuser.getCollegesInfo();
+//        Integer cityID = createuser.get
+//        Integer countryID = createuser.getCountry();
+//        Integer stateID = createuser.getState();
+
+            // Create the event object
+            UserSignUpEventPayload signUpEvent = new UserSignUpEventPayload(userID, skillIDs, educationIDs);
+
+            // Publish the event (You need to implement the event publishing mechanism)
+            usersignUpRequestMessagePublisher.publish("userSignUpRequestTopicName","User SignUp" , signUpEvent);
+            System.out.println("userservice publish");
+            return new createUserResponse(userResponse , acessstoken , "Successfully Registered");
+        }catch (ClassCastException e){
+            System.out.println(e);
+            return new createUserResponse(null,null,"Exception");
         }
-        String acessstoken = jwtservice.generateAccessToken((String) user.get("userName"), (String) user.get("userID"));
-        UserDetails userResponse = new UserDetails((String) user.get("userName"));
-        return new createUserResponse(userResponse,acessstoken , "Successfully Registered");
+
     }
 
     public Integer createProject(createProject createproject, Principal principal){

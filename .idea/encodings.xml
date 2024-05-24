@@ -12,8 +12,24 @@
     <file url="file://$PROJECT_DIR$/AuthService/Auth_Messaging/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AuthService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AuthService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FeedService/Feed_Application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FeedService/Feed_Container/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FeedService/Feed_DataAccess/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FeedService/Feed_Domain/Feed_Application_Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FeedService/Feed_Domain/Feed_Domain_Core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FeedService/Feed_Domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FeedService/Feed_Domain/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FeedService/Feed_Messaging/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/FeedService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FeedService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Infrastructure/kafka/kafka_Config_Data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Infrastructure/kafka/kafka_Consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Infrastructure/kafka/kafka_Producer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Infrastructure/kafka/kafka_model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Infrastructure/kafka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Infrastructure/kafka/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Infrastructure/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Infrastructure/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ServiceDiscovery/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />

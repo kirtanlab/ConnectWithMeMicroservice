@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: 8183
 
 spring :
   application :
@@ -9,16 +9,12 @@ spring :
     gateway:
       routes:
         - id: UserService
-          uri: lb://UserService
+          uri: http://localhost:8181
           predicates:
             - Path=/Auth/v1/api/**
-
 eureka:
   client:
     fetch-registry : true
     register-with-eureka : true
     service-url:
       defaultZone : http://localhost:8182/eureka/
-
-jwt:
-  secretKey : afafasfafafasfasfasfafacasdasfasxASFACASDFACASDFASFASFDAFASFASDAADSCSDFADCVSGCFVADXCcadwavfsfarvf

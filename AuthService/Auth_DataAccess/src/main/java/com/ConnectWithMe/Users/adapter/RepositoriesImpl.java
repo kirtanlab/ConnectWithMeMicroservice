@@ -142,7 +142,7 @@ public class RepositoriesImpl implements UserRepository {
         // Save all user skill associations
         userskilljparepo.saveAll(userSkillsEntities);
 
-        userobj.put("userID", String.valueOf(userEntity.getId()));
+        userobj.put("userID", userEntity.getId());
         userobj.put("userName", userEntity.getName());
         return userobj;
     }
@@ -187,4 +187,8 @@ public class RepositoriesImpl implements UserRepository {
 
         return userProjects.getId();
     }
+
+//    public List<Integer> ProjectIDsByUserID(createUser user){
+//        return userprojectjparepo.findProjectIDsByuser(user);
+//    }
 }
