@@ -46,7 +46,7 @@ auth-service:
   userUpdate-response-topic-name: userUpdate-response
 
 kafka-config:
-  bootstrap-servers: localhost:29092
+  bootstrap-servers: localhost:9092
   schema-registry-url-key: schema.registry.url
   schema-registry-url: http://localhost:8081
   num-of-partitions: 3
@@ -81,3 +81,9 @@ kafka-consumer-config:
   max-partition-fetch-bytes-default: 1048576
   max-partition-fetch-bytes-boost-factor: 1
   poll-timeout-ms: 150
+
+logging:
+  level:
+    org:
+      springframework:
+        kafka=DEBUG:

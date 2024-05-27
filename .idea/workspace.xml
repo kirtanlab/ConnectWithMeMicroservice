@@ -5,51 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e329f494-d2cd-4920-85fd-bccf739a05e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/config/AuthServiceConfigData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/outbox/model/AdddressPayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/outbox/model/UserSignUpEventPayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/output/message/publisher/userSignUpRequestMessagePublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthService/Auth_Messaging/src/main/java/com/ConnectWithMe/publisher/kafka/UserSignUpEventKafkaPublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_Application/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_Application/src/main/java/com/ConnectWithMe/Controllers/FeedController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_Container/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_Container/src/main/java/com/ConnectWithMe/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_Container/src/main/java/com/ConnectWithMe/config/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_Container/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_DataAccess/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_DataAccess/src/main/java/com/ConnectWithMe/entity/FeedGenerationDataEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_Domain/Feed_Application_Service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_Domain/Feed_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/input/service/jwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_Domain/Feed_Domain_Core/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_Domain/Feed_Domain_Core/src/main/java/com/ConnectWithMe/Domain/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_Domain/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedService/Feed_Messaging/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Config_Data/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Config_Data/src/main/java/com/ConnectWithMe/kafka/config/data/KafkaConfigData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Config_Data/src/main/java/com/ConnectWithMe/kafka/config/data/KafkaProducerConfigData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Consumer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Producer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Producer/src/main/java/com/ConnectWithMe/kafka/exception/KafkaProducerException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Producer/src/main/java/com/ConnectWithMe/kafka/service/KafkaProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Producer/src/main/java/com/ConnectWithMe/kafka/service/KafkaProducerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Producer/src/main/java/com/ConnectWithMe/kafka/service/impl/KafkaProducerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_model/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/docker/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_model/src/main/java/com/ConnectWithMe/kafka/Model/UserSignUpEventAvroPayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_model/src/main/resources/avro/UserSignUpEventPayload.avsc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APIGateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/APIGateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APIGateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/APIGateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Container/src/main/java/com/ConnectWithMe/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Container/src/main/java/com/ConnectWithMe/config/SecurityConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AuthService/Auth_Container/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Container/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/UserProjectsJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/JpaRepository/UserProjectsJpaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/adapter/RepositoriesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_DataAccess/src/main/java/com/ConnectWithMe/Users/adapter/RepositoriesImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/input/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/input/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/output/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Domain/Auth_Application_Service/src/main/java/com/ConnectWithMe/Domain/ports/output/Repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Messaging/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Messaging/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Messaging/src/main/java/com/ConnectWithMe/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/FeedService/Feed_Container/src/main/java/com/ConnectWithMe/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FeedService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/Auth_Messaging/src/main/java/com/ConnectWithMe/publisher/kafka/UserSignUpEventKafkaPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthService/Auth_Messaging/src/main/java/com/ConnectWithMe/publisher/kafka/UserSignUpEventKafkaPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Producer/src/main/java/com/ConnectWithMe/kafka/service/KafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Producer/src/main/java/com/ConnectWithMe/kafka/service/KafkaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Producer/src/main/java/com/ConnectWithMe/kafka/service/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Producer/src/main/java/com/ConnectWithMe/kafka/service/KafkaProducerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Producer/src/main/java/com/ConnectWithMe/kafka/service/impl/KafkaProducerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_Producer/src/main/java/com/ConnectWithMe/kafka/service/impl/KafkaProducerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/kafka/kafka_model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/kafka/kafka_model/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,5 +166,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ServiceDiscovery/src/main/java/com/ConnectWithMe/Main.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,0 +1,25 @@
+{
+  "type": "record",
+  "name": "UserSignUpEventPayload",
+  "namespace": "com.ConnectWithMe.kafka.Model",
+  "fields": [
+    {
+      "name": "userID",
+      "type": "int"
+    },
+    {
+      "name": "skillIDs",
+      "type": {
+        "type": "array",
+        "items": "int"
+      }
+    },
+    {
+      "name": "collegeInfoID",
+      "type": {
+        "type": "array",
+        "items": "int"
+      }
+    }
+  ]
+}

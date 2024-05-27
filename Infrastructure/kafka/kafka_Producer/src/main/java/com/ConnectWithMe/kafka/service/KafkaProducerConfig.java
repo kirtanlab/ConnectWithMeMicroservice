@@ -2,7 +2,6 @@ package com.ConnectWithMe.kafka.service;
 
 import com.ConnectWithMe.kafka.config.data.KafkaConfigData;
 import com.ConnectWithMe.kafka.config.data.KafkaProducerConfigData;
-import org.apache.avro.specific.SpecificRecordBase;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-public class KafkaProducerConfig <K extends Serializable, V extends SpecificRecordBase> {
+public class KafkaProducerConfig <K extends Serializable, V > {
 
     private final KafkaConfigData kafkaConfigData;
     private final KafkaProducerConfigData kafkaProducerConfigData;

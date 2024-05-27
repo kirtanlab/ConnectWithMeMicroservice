@@ -14,7 +14,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 
 @Component
-public class KafkaProducerImpl<K extends Serializable, V> implements KafkaProducer<K, V> {
+public class KafkaProducerImpl<K extends Serializable, V extends SpecificRecordBase> implements KafkaProducer<K, V> {
 
     private final KafkaTemplate<K, V> kafkaTemplate;
 

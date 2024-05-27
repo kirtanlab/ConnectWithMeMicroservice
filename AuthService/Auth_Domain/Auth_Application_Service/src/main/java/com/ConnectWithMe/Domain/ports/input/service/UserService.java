@@ -1,6 +1,7 @@
 package com.ConnectWithMe.Domain.ports.input.service;
 
 import com.ConnectWithMe.Domain.User;
+import com.ConnectWithMe.Domain.config.AuthServiceConfigData;
 import com.ConnectWithMe.Domain.dto.create.*;
 import com.ConnectWithMe.Domain.ports.output.Repository.UserRepository;
 import com.ConnectWithMe.Domain.ports.output.message.publisher.userSignUpRequestMessagePublisher;
@@ -20,6 +21,9 @@ public class UserService {
 
     @Autowired
     private userSignUpRequestMessagePublisher usersignUpRequestMessagePublisher;
+
+    @Autowired
+    private  AuthServiceConfigData authServiceConfigData;
 
     public UserService (UserRepository userrepo , jwtService jwtservice){
         this.userrepo = userrepo;
@@ -89,7 +93,7 @@ public class UserService {
             UserSignUpEventPayload signUpEvent = new UserSignUpEventPayload(userID, skillIDs, educationIDs);
 
             // Publish the event (You need to implement the event publishing mechanism)
-            usersignUpRequestMessagePublisher.publish("userSignUpRequestTopicName","User SignUp" , signUpEvent);
+            usersignUpRequestMessagePublisher.publish(authServiceConfigData.getUserSignUpRequestTopicName(), "User SignUp" , signUpEvent);
             System.out.println("userservice publish");
             return new createUserResponse(userResponse , acessstoken , "Successfully Registered");
         }catch (ClassCastException e){
