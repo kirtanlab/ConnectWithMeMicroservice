@@ -24,7 +24,7 @@ public class UserSignUpEventKafkaPublisher implements userSignUpRequestMessagePu
 
         System.out.println("userSignUpEventKafkapublisher "+userSignUpEventPayload.getUserID());
         UserSignUpEventAvroPayload avropayload = new UserSignUpEventAvroPayload(userSignUpEventPayload.getUserID() , userSignUpEventPayload.getSkillIDs() , Collections.singletonList(userSignUpEventPayload.getCollegeInfoID()));
-        kafkaProducer.send(topicName , key , avropayload);
+        kafkaProducer.send(topicName , String.valueOf(userSignUpEventPayload.getUserID()) , avropayload);
         System.out.println("Done send");
     }
 }

@@ -63,7 +63,7 @@ public class UserService {
         return "Done";
     }
 
-    public createUserResponse RegisterUser(createUser createuser){
+    public createUserResponse  RegisterUser(createUser createuser){
         try {
             System.out.println("createuser"+createuser.getEmail());
             Map<String, Object> user  = userrepo.saveUser(createuser);
@@ -93,6 +93,7 @@ public class UserService {
             UserSignUpEventPayload signUpEvent = new UserSignUpEventPayload(userID, skillIDs, educationIDs);
 
             // Publish the event (You need to implement the event publishing mechanism)
+            System.out.println("authServiceConfigData.getUserSignUpRequestTopicName() "+ authServiceConfigData.getUserSignUpRequestTopicName());
             usersignUpRequestMessagePublisher.publish(authServiceConfigData.getUserSignUpRequestTopicName(), "User SignUp" , signUpEvent);
             System.out.println("userservice publish");
             return new createUserResponse(userResponse , acessstoken , "Successfully Registered");
