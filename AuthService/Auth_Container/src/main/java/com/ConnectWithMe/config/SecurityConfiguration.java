@@ -12,6 +12,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
+@EnableWebSecurity
 public class SecurityConfiguration {
 
     private final jwtService jwtservice;
@@ -25,12 +26,14 @@ public class SecurityConfiguration {
         System.out.println("security");
         http.csrf(csrf -> csrf.disable())
                 .authorizeRequests(authorizeRequests -> authorizeRequests
-                        .requestMatchers("Auth/v1/api/Login/","Auth/v1/api/SignUp/").permitAll()
+                        .requestMatchers("/Auth/v1/api/Login/", "/Auth/v1/api/SignUp/").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManagement ->
                         sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
+                .formLogin(formLogin -> formLogin.disable())  // Disable form login
+                .httpBasic(httpBasic -> httpBasic.disable())  // Disable HTTP Basic
                 .addFilterBefore(new JwtAuthenticationFilter(jwtservice), UsernamePasswordAuthenticationFilter.class);
         System.out.println(http);
         return http.build();

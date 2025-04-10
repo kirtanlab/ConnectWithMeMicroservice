@@ -8,10 +8,16 @@ spring :
   cloud:
     gateway:
       routes:
+        - id: RootRedirect
+          uri: http://localhost:8183
+          predicates:
+              - Path=/
+          filters:
+              - RedirectTo=302, /Auth/v1/api/Login/
         - id: UserService
           uri: http://localhost:8181
           predicates:
-            - Path=/Auth/v1/api/**
+                  - Path=/Auth/v1/api/**
 eureka:
   client:
     fetch-registry : true

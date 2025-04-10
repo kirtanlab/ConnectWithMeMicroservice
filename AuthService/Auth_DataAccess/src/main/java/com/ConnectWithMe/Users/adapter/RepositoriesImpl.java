@@ -149,7 +149,9 @@ public class RepositoriesImpl implements UserRepository {
 
     public Map<String, Object> loginUser(checkUser checkuser){
         Map<String, Object> userobj = new HashMap<>(); // Instantiate a HashMap
+        System.out.println("user ");
         UsersEntity user = authjparepo.findByEmail(checkuser.getEmail());
+        System.out.println("user "+user.getId());
         userobj.put("userID", String.valueOf(user.getId()));
         userobj.put("userName", user.getName());
         return userobj;
