@@ -16,7 +16,7 @@ This project uses a microservices architecture with the following components:
 
 #### Complete System Architecture
 
-![System Architecture](https://i.imgur.com/sYl9v4I.png)
+![image](https://github.com/user-attachments/assets/6939555a-d00c-4d00-9493-437690cd9a53)
 
 The architecture includes:
 - Ingress Gateway for client requests
@@ -61,7 +61,7 @@ ConnectWithMe/
 
 The architecture follows Domain-Driven Design (DDD) and Hexagonal Architecture principles, with clear separation between domain logic, application services, and infrastructure components. This architecture was chosen for its high security, maintainability, and abstraction capabilities.
 
-![Hexagonal Architecture](https://i.imgur.com/Aj1MZXQ.png)
+![image](https://github.com/user-attachments/assets/09f5040f-5142-408d-af36-182b8ae7c9ec)
 
 The application implements the ports and adapters pattern where:
 - **Domain Layer**: Contains core business logic and entities
@@ -140,6 +140,8 @@ Education
 
 The database schema was designed with careful consideration of relationships between entities to support the user profile, project sharing, and recommendation features.
 
+![image](https://github.com/user-attachments/assets/2dd4c338-86bd-4741-95b9-dfc66a17b7e2)
+
 ## Event-Driven Architecture
 The system uses Kafka for event-driven communication between services. Events like user registration trigger messages that are consumed by other services to update their state.
 Event Flow Example
@@ -160,6 +162,7 @@ When a user registers or updates their profile:
 
 ## Service Communication Diagrams
 **User Feed Generation**
+![image](https://github.com/user-attachments/assets/14d60d80-55f7-4945-911c-96b360380b49)
 
 These sequence diagrams illustrate how the services interact to generate feeds. The Feed Service communicates with Auth Service to gather necessary data for generating personalized user feeds.
 
@@ -187,10 +190,6 @@ The project was developed following a systematic approach:
 6. Implementation of JWT token authentication
 7. Setup of service discovery using Netflix Eureka
 8. Configuration of API Gateway for request routing
-
-## System Architecture Diagram
-
-## Clean (Hexagonal) Architecture
 
 ## License
 This project is licensed under the MIT License
