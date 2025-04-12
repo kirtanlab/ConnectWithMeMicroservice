@@ -38,3 +38,159 @@ The architecture includes:
 - **Docker**: Containerization (for development and deployment)
 
 ## Project Structure
+ConnectWithMe/
+├── APIGateway/
+├── AuthService/
+│   ├── Auth_Application/
+│   ├── Auth_Container/
+│   ├── Auth_DataAccess/
+│   ├── Auth_Domain/
+│   │   ├── Auth_Application_Service/
+│   │   └── Auth_Domain_Core/
+│   └── Auth_Messaging/
+├── FeedService/
+│   ├── Feed_Application/
+│   ├── Feed_Container/
+│   ├── Feed_DataAccess/
+│   ├── Feed_Domain/
+│   │   ├── Feed_Application_Service/
+│   │   └── Feed_Domain_Core/
+│   └── Feed_Messaging/
+├── Infrastructure/
+└── ServiceDiscovery/
+
+The architecture follows Domain-Driven Design (DDD) and Hexagonal Architecture principles, with clear separation between domain logic, application services, and infrastructure components. This architecture was chosen for its high security, maintainability, and abstraction capabilities.
+
+![Hexagonal Architecture](https://i.imgur.com/Aj1MZXQ.png)
+
+The application implements the ports and adapters pattern where:
+- **Domain Layer**: Contains core business logic and entities
+- **Application Layer**: Orchestrates use cases using domain objects
+- **Infrastructure Layer**: Handles external concerns like databases and messaging
+
+## Getting Started
+
+### Prerequisites
+
+- Java 17 or higher
+- Maven 3.6 or higher
+- PostgreSQL database
+- Kafka (for messaging between services)
+
+### Setup and Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/ConnectWithMe.git
+   cd ConnectWithMe
+2. **Build the project**
+   mvn clean install
+3. **Configure the databases**
+   The application is configured to use a Neon PostgreSQL database. For local development, you may want to update the database configuration in each service's   
+   application.yml file.
+4. **Start the services (in order)**
+    a. **Service Discovery**
+        cd ServiceDiscovery
+        mvn spring-boot:run
+    b. **Auth Service**
+        cd AuthService/Auth_Container
+        mvn spring-boot:run
+    c. **Feed Service**
+        cd FeedService/Feed_Container
+        mvn spring-boot:run
+    d. **API Gateway**
+        cd APIGateway
+        mvn spring-boot:run
+
+### Service Ports
+
+Service Discovery: 8182
+Auth Service: 8181
+Feed Service: 8184
+API Gateway: 8183
+
+### API Endpoints
+**Auth Service** (/Auth/v1/api/)
+
+**POST /SignUp/**: Register a new user
+**POST /Login/**: Authenticate a user
+**POST /Country/**: Add a country
+**POST /State/**: Add a state
+**POST /City/**: Add a city
+**POST /CollegeInfo/**: Add college information
+**POST /Skill/**: Add a skill
+**POST /UserProject/**: Create a user project
+
+**Feed Service** (/Feed/v1/api/)
+
+**GET /**: Test endpoint
+**GET /jwtTester**: JWT authentication test endpoint
+
+### Security
+The application uses JWT (JSON Web Tokens) for authentication. The token needs to be included in the Authorization header for protected endpoints: Authorization: Bearer <your-jwt-token>
+
+## Database Schema
+The application uses several entities including:
+Users
+Countries, States, Cities
+CollegesInfo
+Skills, UserSkills
+UserProjects, ProjectSkills
+Education
+
+The database schema was designed with careful consideration of relationships between entities to support the user profile, project sharing, and recommendation features.
+
+## Event-Driven Architecture
+The system uses Kafka for event-driven communication between services. Events like user registration trigger messages that are consumed by other services to update their state.
+Event Flow Example
+When a user registers or updates their profile:
+1. Auth Service saves the user data and publishes a UserUpdatedEvent containing
+    public class UserUpdatedEvent {
+        private String userId;
+        private List<Integer> skillIDs;
+        private Integer locationID;
+        private List<Integer> educationIDs;
+        private List<Integer> projectSkillIDs;
+    }
+2. Feed Service consumes this event and:
+    Updates its PostgreSQL document store with user information
+    Processes data to find users with similar skills, education, or location
+    Publishes a RecommendationEvent with recommended user IDs
+3. The system maintains loose coupling between services while ensuring data consistency through this event-driven approach.
+
+## Service Communication Diagrams
+**User Feed Generation**
+
+These sequence diagrams illustrate how the services interact to generate feeds. The Feed Service communicates with Auth Service to gather necessary data for generating personalized user feeds.
+
+## Development Notes
+The project uses Spring Security for authentication and authorization
+JWT tokens are configured to expire after 1 hour
+The API Gateway routes requests based on path prefixes to the appropriate services
+The Service Discovery uses Netflix Eureka for service registration and discovery
+
+## Future Enhancements
+Implement better error handling and validation
+Add comprehensive unit and integration tests
+Set up CI/CD pipeline
+Add monitoring and logging
+Implement front-end applications (web and mobile)
+Add social features like comments, likes, and shares
+
+## Development History
+The project was developed following a systematic approach:
+1. Initial focus on clean architecture principles and their application to microservices
+2. Database design for user/auth service
+3. Implementation of hexagonal architecture with domain-driven design
+4. Development of key APIs for user management, project sharing, and skill management
+5. Integration of Kafka for event-driven communication
+6. Implementation of JWT token authentication
+7. Setup of service discovery using Netflix Eureka
+8. Configuration of API Gateway for request routing
+
+## System Architecture Diagram
+
+## Clean (Hexagonal) Architecture
+
+## License
+This project is licensed under the MIT License
