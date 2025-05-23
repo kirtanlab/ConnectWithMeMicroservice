@@ -38,6 +38,7 @@ The architecture includes:
 - **Docker**: Containerization (for development and deployment)
 
 ## Project Structure
+```
 ConnectWithMe/
 ├── APIGateway/
 ├── AuthService/
@@ -58,6 +59,7 @@ ConnectWithMe/
 │   └── Feed_Messaging/
 ├── Infrastructure/
 └── ServiceDiscovery/
+```
 
 The architecture follows Domain-Driven Design (DDD) and Hexagonal Architecture principles, with clear separation between domain logic, application services, and infrastructure components. This architecture was chosen for its high security, maintainability, and abstraction capabilities.
 
